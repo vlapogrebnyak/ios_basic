@@ -13,6 +13,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    
+    let CORRECT_USERNAME = "test"
+    let CORRECT_PASSWORD = "123"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,10 +42,6 @@ class LoginViewController: UIViewController {
         
     }
     
-    @IBAction func loginButtonPressed(_ sender: Any) {
-        print("Login was pressed:\(self.loginTextField.text!) : \(self.passwordTextField.text!)")
-    }
-    
     @objc func hideKeyboard() {
         self.scrollView?.endEditing(true)
     }
@@ -61,14 +61,26 @@ class LoginViewController: UIViewController {
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let login = self.loginTextField.text!
+        let password = self.passwordTextField.text!
+        
+        let accessGranted = login == CORRECT_USERNAME && password == CORRECT_PASSWORD
+        
+        if !accessGranted {
+            showAccessAlert()
+        }
+        
+        return accessGranted
     }
-    */
-
+    
+    func showAccessAlert() {
+        let alert = UIAlertController(title: "Ошибка", message: "Введен неправильный пароль или имя пользователя", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
