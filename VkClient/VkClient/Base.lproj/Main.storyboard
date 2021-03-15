@@ -131,38 +131,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="108" id="GMK-Dl-b5D" customClass="FriendTableViewCell" customModule="VkClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="108"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="171" id="GMK-Dl-b5D" customClass="FriendTableViewCell" customModule="VkClient" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="171"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GMK-Dl-b5D" id="G9z-8S-2MO">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="171"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HmO-nE-3AO">
-                                            <rect key="frame" x="20" y="6" width="91" height="96"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esO-m7-aIA" customClass="AvatarView" customModule="VkClient" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="35.5" width="100" height="100"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="91" id="6Im-Jd-j7Q"/>
+                                                <constraint firstAttribute="height" constant="100" id="Rxj-Yx-Th8"/>
+                                                <constraint firstAttribute="width" constant="100" id="vdq-Xq-y9G"/>
                                             </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mar-2k-fRi">
-                                            <rect key="frame" x="119" y="44" width="42" height="1098"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                    <size key="value" width="0.0" height="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mar-2k-fRi">
+                                            <rect key="frame" x="127" y="70.5" width="42" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="zMZ-qf-SbH"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="HmO-nE-3AO" firstAttribute="leading" secondItem="G9z-8S-2MO" secondAttribute="leading" constant="20" symbolic="YES" id="Adp-Mt-5fx"/>
-                                        <constraint firstItem="Mar-2k-fRi" firstAttribute="centerY" secondItem="G9z-8S-2MO" secondAttribute="centerY" id="N7j-X0-xXQ"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mar-2k-fRi" secondAttribute="trailing" constant="20" symbolic="YES" id="Qdg-DX-rwm"/>
-                                        <constraint firstAttribute="bottom" secondItem="HmO-nE-3AO" secondAttribute="bottom" constant="6" id="lcX-Cb-VvS"/>
-                                        <constraint firstItem="Mar-2k-fRi" firstAttribute="leading" secondItem="HmO-nE-3AO" secondAttribute="trailing" constant="8" symbolic="YES" id="sS2-3r-teB"/>
-                                        <constraint firstItem="HmO-nE-3AO" firstAttribute="top" secondItem="G9z-8S-2MO" secondAttribute="top" constant="6" id="zQJ-0G-H9W"/>
+                                        <constraint firstItem="Mar-2k-fRi" firstAttribute="leading" secondItem="esO-m7-aIA" secondAttribute="trailing" constant="17" id="3ar-ab-QWr"/>
+                                        <constraint firstItem="Mar-2k-fRi" firstAttribute="centerY" secondItem="G9z-8S-2MO" secondAttribute="centerY" id="BAE-z5-16s"/>
+                                        <constraint firstItem="esO-m7-aIA" firstAttribute="centerY" secondItem="G9z-8S-2MO" secondAttribute="centerY" id="BnX-pc-Kj4"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mar-2k-fRi" secondAttribute="trailing" constant="20" symbolic="YES" id="EOd-DF-94H"/>
+                                        <constraint firstItem="esO-m7-aIA" firstAttribute="leading" secondItem="G9z-8S-2MO" secondAttribute="leading" constant="10" id="W49-CJ-hcM"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="name" destination="Mar-2k-fRi" id="ab5-SP-e0F"/>
-                                    <outlet property="photo" destination="HmO-nE-3AO" id="9KP-Y5-ROq"/>
+                                    <outlet property="photo" destination="esO-m7-aIA" id="zX5-XW-lf7"/>
                                     <segue destination="Oam-Ni-5Je" kind="show" id="7CW-L4-9Dw"/>
                                 </connections>
                             </tableViewCell>
@@ -212,6 +227,9 @@
                                         <constraint firstAttribute="bottom" secondItem="fWJ-VB-MEm" secondAttribute="bottom" id="v5Z-bm-XFR"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="image" destination="fWJ-VB-MEm" id="7k8-XJ-jIg"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

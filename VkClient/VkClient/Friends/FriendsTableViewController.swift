@@ -35,12 +35,17 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendTableViewCell
         
-        cell.photo.image = UIImage(named: testUsers[indexPath.row].photoUrl)
+        cell.photo.imageView.image = UIImage(named: testUsers[indexPath.row].photoUrl)
+       
         cell.name.text = testUsers[indexPath.row].userName
 
         return cell
     }
 
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120.0
+    }
 
     /*
     // Override to support conditional editing of the table view.
