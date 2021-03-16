@@ -9,6 +9,8 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
 
+    var selectedUserPhotoUrl : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,6 +49,20 @@ class FriendsTableViewController: UITableViewController {
         return 120.0
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.selectedUserPhotoUrl = testUsers[indexPath.row].photoUrl
+        self.performSegue(withIdentifier:"showCollectionView", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+
+            if(segue.identifier == "showCollectionView") {
+                var vc = segue.destination as! FriendsPhotoCollectionViewController
+               vc.photo = self.selectedUserPhotoUrl
+            }
+        }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
