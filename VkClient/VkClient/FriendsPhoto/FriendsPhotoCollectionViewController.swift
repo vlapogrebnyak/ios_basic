@@ -10,7 +10,7 @@ import UIKit
 
 class FriendsPhotoCollectionViewController: UICollectionViewController {
     
-    private let reuseIdentifier = "FriendsPhotoCollectionView"
+    private let reuseIdentifier = "FriendsPhotoCVID"
 
     var photo : String?
     
@@ -21,7 +21,7 @@ class FriendsPhotoCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(FriendsPhotoCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -50,10 +50,10 @@ class FriendsPhotoCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .black
-//        let fcell = cell as! FriendsPhotoCollectionViewCell
-//        fcell.image.image = UIImage(contentsOfFile: self.photo!)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendsPhotoCVID", for: indexPath) as! FriendsPhotoCollectionViewCell
+        
+        
+        cell.image.image = UIImage(named: self.photo!)
         // Configure the cell
     
         return cell

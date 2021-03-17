@@ -31,7 +31,7 @@ class LikeControl: UIControl {
     
     private func setupView() {
        
-        likeCounterLabel = UILabel()
+        likeCounterLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 20) )
         likeCounterLabel.text = "0"
         likeButton = UIButton(type: .system)
         likeButton.setTitleColor(.lightGray, for: .normal)
