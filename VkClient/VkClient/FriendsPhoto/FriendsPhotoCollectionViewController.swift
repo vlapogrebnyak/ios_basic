@@ -53,9 +53,9 @@ class FriendsPhotoCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendsPhotoCVID", for: indexPath) as! FriendsPhotoCollectionViewCell
         
         
-        cell.image.image = UIImage(named: self.photo!)
         // Configure the cell
-    
+        cell.image.image = UIImage(named: self.photo!)
+
         return cell
     }
 

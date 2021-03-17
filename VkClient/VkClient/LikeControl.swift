@@ -20,7 +20,7 @@ class LikeControl: UIControl {
     }
     
     override init(frame: CGRect) {
-         super.init(frame: frame)
+        super.init(frame: frame)
         self.setupView()
     }
         
@@ -30,39 +30,46 @@ class LikeControl: UIControl {
     }
     
     private func setupView() {
-       
-        likeCounterLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 20) )
+//        self.backgroundColor = .clear
+
+        likeCounterLabel = UILabel()
         likeCounterLabel.text = "0"
-        likeButton = UIButton(type: .system)
-        likeButton.setTitleColor(.lightGray, for: .normal)
-        likeButton.setTitleColor(.white, for: .selected)
-        
+        likeButton = UIButton()
+        let likeImage = UIImage(named: "unlikedAsset")
+        likeButton.setImage(likeImage , for: .normal)
         likeButton.addTarget(self, action: #selector(likeClicked), for: .touchUpInside)
         
         stackViewContainer = UIStackView(arrangedSubviews: [self.likeCounterLabel, self.likeButton])
 
-        self.addSubview(stackViewContainer)
-
-        stackViewContainer.spacing = 8
         stackViewContainer.axis = .horizontal
         stackViewContainer.alignment = .center
         stackViewContainer.distribution = .fillEqually
+        
+        self.addSubview(stackViewContainer)
+
     }
     
     func updateButtonState() {
         if _state {
-            likeButton.setTitle("Unlike", for: .normal)
+            let likeImage = UIImage(named: "likedAsset")
+            likeButton.setImage(likeImage , for: .normal)
             likeCounterLabel.text = "1"
         }
         else {
             
-            likeButton.setTitle("Like", for: .normal)
+            let likeImage = UIImage(named: "unlikedAsset")
+            likeButton.setImage(likeImage , for: .normal)
             likeCounterLabel.text = "0"
         }
     }
     
     @objc private func likeClicked() {
         self._state = !self._state
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        stackViewContainer.frame = bounds
     }
     
     /*
