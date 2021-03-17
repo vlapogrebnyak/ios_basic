@@ -68,9 +68,9 @@ import UIKit
         subview.layer.shadowOffset = self.shadowOffset
         subview.layer.shadowRadius = self.shadowRadius
         
-        
         subview.layer.cornerRadius = (rect.width / 2)
         imageView.layer.cornerRadius = (rect.width / 2)
+
     }
     
 
