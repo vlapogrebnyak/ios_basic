@@ -19,6 +19,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let session = Session.instance
+        session.token = "Test token"
+        session.userId = 1
 
         // Do any additional setup after loading the view.
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
