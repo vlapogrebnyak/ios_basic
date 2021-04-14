@@ -131,39 +131,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="108" id="GMK-Dl-b5D" customClass="FriendTableViewCell" customModule="VkClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="108"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="171" id="GMK-Dl-b5D" customClass="FriendTableViewCell" customModule="VkClient" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="171"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GMK-Dl-b5D" id="G9z-8S-2MO">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="171"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HmO-nE-3AO">
-                                            <rect key="frame" x="20" y="6" width="91" height="96"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esO-m7-aIA" customClass="AvatarView" customModule="VkClient" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="35.5" width="100" height="100"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="91" id="6Im-Jd-j7Q"/>
+                                                <constraint firstAttribute="height" constant="100" id="Rxj-Yx-Th8"/>
+                                                <constraint firstAttribute="width" constant="100" id="vdq-Xq-y9G"/>
                                             </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mar-2k-fRi">
-                                            <rect key="frame" x="119" y="44" width="42" height="1098"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                    <size key="value" width="0.0" height="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mar-2k-fRi">
+                                            <rect key="frame" x="127" y="70.5" width="42" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="zMZ-qf-SbH"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="HmO-nE-3AO" firstAttribute="leading" secondItem="G9z-8S-2MO" secondAttribute="leading" constant="20" symbolic="YES" id="Adp-Mt-5fx"/>
-                                        <constraint firstItem="Mar-2k-fRi" firstAttribute="centerY" secondItem="G9z-8S-2MO" secondAttribute="centerY" id="N7j-X0-xXQ"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mar-2k-fRi" secondAttribute="trailing" constant="20" symbolic="YES" id="Qdg-DX-rwm"/>
-                                        <constraint firstAttribute="bottom" secondItem="HmO-nE-3AO" secondAttribute="bottom" constant="6" id="lcX-Cb-VvS"/>
-                                        <constraint firstItem="Mar-2k-fRi" firstAttribute="leading" secondItem="HmO-nE-3AO" secondAttribute="trailing" constant="8" symbolic="YES" id="sS2-3r-teB"/>
-                                        <constraint firstItem="HmO-nE-3AO" firstAttribute="top" secondItem="G9z-8S-2MO" secondAttribute="top" constant="6" id="zQJ-0G-H9W"/>
+                                        <constraint firstItem="Mar-2k-fRi" firstAttribute="leading" secondItem="esO-m7-aIA" secondAttribute="trailing" constant="17" id="3ar-ab-QWr"/>
+                                        <constraint firstItem="Mar-2k-fRi" firstAttribute="centerY" secondItem="G9z-8S-2MO" secondAttribute="centerY" id="BAE-z5-16s"/>
+                                        <constraint firstItem="esO-m7-aIA" firstAttribute="centerY" secondItem="G9z-8S-2MO" secondAttribute="centerY" id="BnX-pc-Kj4"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mar-2k-fRi" secondAttribute="trailing" constant="20" symbolic="YES" id="EOd-DF-94H"/>
+                                        <constraint firstItem="esO-m7-aIA" firstAttribute="leading" secondItem="G9z-8S-2MO" secondAttribute="leading" constant="10" id="W49-CJ-hcM"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="name" destination="Mar-2k-fRi" id="ab5-SP-e0F"/>
-                                    <outlet property="photo" destination="HmO-nE-3AO" id="9KP-Y5-ROq"/>
-                                    <segue destination="Oam-Ni-5Je" kind="show" id="7CW-L4-9Dw"/>
+                                    <outlet property="photo" destination="esO-m7-aIA" id="zX5-XW-lf7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -174,6 +188,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="m78-BB-LNc"/>
+                    <connections>
+                        <segue destination="Oam-Ni-5Je" kind="show" identifier="showCollectionView" id="qzr-We-9gr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwo-sU-phE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -194,7 +211,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendPhotoCell" id="pB3-Yv-YPn" customClass="FriendsPhotoCollectionViewCell" customModule="VkClient" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendsPhotoCVID" id="pB3-Yv-YPn" customClass="FriendsPhotoCollectionViewCell" customModule="VkClient" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="D4R-QX-oce">
@@ -202,16 +219,31 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fWJ-VB-MEm">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="88"/>
                                         </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37J-NV-wTb" customClass="LikeControl" customModule="VkClient" customModuleProvider="target">
+                                            <rect key="frame" x="47" y="96" width="73" height="24"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="73" id="mT7-39-JqJ"/>
+                                                <constraint firstAttribute="height" constant="24" id="wBm-2H-HlU"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="fWJ-VB-MEm" firstAttribute="top" secondItem="D4R-QX-oce" secondAttribute="top" id="QdK-Z8-WZT"/>
-                                        <constraint firstAttribute="trailing" secondItem="fWJ-VB-MEm" secondAttribute="trailing" id="aYY-tW-cTe"/>
-                                        <constraint firstItem="fWJ-VB-MEm" firstAttribute="leading" secondItem="D4R-QX-oce" secondAttribute="leading" id="sB9-fK-PIS"/>
-                                        <constraint firstAttribute="bottom" secondItem="fWJ-VB-MEm" secondAttribute="bottom" id="v5Z-bm-XFR"/>
+                                        <constraint firstItem="37J-NV-wTb" firstAttribute="leading" secondItem="fWJ-VB-MEm" secondAttribute="trailing" constant="-81" id="09l-dg-PMF"/>
+                                        <constraint firstItem="fWJ-VB-MEm" firstAttribute="centerY" secondItem="D4R-QX-oce" secondAttribute="centerY" constant="-20" id="D1a-uU-C6f"/>
+                                        <constraint firstAttribute="bottom" secondItem="fWJ-VB-MEm" secondAttribute="bottom" constant="40" id="HIm-sy-KPk"/>
+                                        <constraint firstItem="fWJ-VB-MEm" firstAttribute="top" secondItem="D4R-QX-oce" secondAttribute="top" id="HKs-t1-YG4"/>
+                                        <constraint firstItem="37J-NV-wTb" firstAttribute="bottom" secondItem="fWJ-VB-MEm" secondAttribute="bottom" constant="32" id="Haj-BW-GqY"/>
+                                        <constraint firstAttribute="trailing" secondItem="fWJ-VB-MEm" secondAttribute="trailing" id="Ofl-N5-2P1"/>
+                                        <constraint firstItem="fWJ-VB-MEm" firstAttribute="leading" secondItem="D4R-QX-oce" secondAttribute="leading" id="gdI-ee-DMh"/>
+                                        <constraint firstItem="fWJ-VB-MEm" firstAttribute="centerX" secondItem="D4R-QX-oce" secondAttribute="centerX" id="vA2-ay-oVn"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="image" destination="fWJ-VB-MEm" id="7k8-XJ-jIg"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
